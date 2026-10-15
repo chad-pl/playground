@@ -1,0 +1,3 @@
+[submodule "chadnet"]
+	path = chadnet
+	url = https://github.com/chad-pl/Chadnet.git

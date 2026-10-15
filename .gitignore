@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# WebAssembly
+/build/
+/wasm/build/
+/src/engine/wasm/*
+!/src/engine/wasm/chad.d.ts
+compile_commands.json
+.cache/

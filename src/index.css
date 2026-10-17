@@ -1,3 +1,30 @@
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --surface-2: #f2f2ee;
+  --border: #dcdcd4;
+  --text: #1c1c1a;
+  --text-muted: #6b6b63;
+  --accent: #1f6f50;
+  --accent-hover: #185a41;
+  --accent-contrast: #ffffff;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+
+  --text-sm: 13px;
+  --text-md: 14px;
+
+  --radius: 6px;
+  --transition: 150ms ease;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
 * {
   margin: 0;
   padding: 0;

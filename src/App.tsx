@@ -1,15 +1,7 @@
-import { useState } from 'react'
-import { MAP_SAMPLE } from './data/samples'
-import { ChadEditor } from './editor/ChadEditor'
+import { PlaygroundView } from './views/PlaygroundView'
 
 function App() {
-  const [source, setSource] = useState(MAP_SAMPLE)
-
-  return (
-    <div>
-      <ChadEditor value={source} onChange={setSource} />
-    </div>
-  )
+  return <PlaygroundView />
 }
 
 export default App

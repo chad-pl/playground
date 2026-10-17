@@ -13,7 +13,7 @@ import {
   NUMBER,
   NUMBER_TAIL,
   OPERATOR_CHARS,
-} from '../data/chadSyntax'
+} from '../../data/chadSyntax'
 
 function literal(stream: StringStream, quote: string): string {
   let escaped = false

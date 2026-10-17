@@ -1,32 +1,22 @@
-# React + TypeScript + Vite
+# Chad Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Write and run [Chad](https://github.com/chad-pl/Chadnet) in the browser. The real interpreter is compiled to WebAssembly, so programs behave exactly like the CLI.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Node.js](https://nodejs.org)
+- [Docker](https://docs.docker.com/get-docker/)
 
-## React Compiler
+Docker is only used to compile the interpreter. No C++ or Emscripten install is needed.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+git clone --recurse-submodules https://github.com/chad-pl/playground.git
+cd playground
+npm install
+npm run build:wasm
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Already cloned without submodules? Run `git submodule update --init` before `npm run build:wasm`.

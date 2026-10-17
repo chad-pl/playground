@@ -1,5 +1,29 @@
 .playground {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+}
+
+.playground__workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 0;
+}
+
+.playground__editor {
+  overflow: auto;
+  border-right: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .playground__workspace {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .playground__editor {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
 }

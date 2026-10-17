@@ -8,6 +8,7 @@
   --accent: #1f6f50;
   --accent-hover: #185a41;
   --accent-contrast: #ffffff;
+  --danger: #b3261e;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -16,6 +17,8 @@
 
   --text-sm: 13px;
   --text-md: 14px;
+
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
 
   --radius: 6px;
   --transition: 150ms ease;

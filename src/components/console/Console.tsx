@@ -1,11 +1,14 @@
+import { CONSOLE_PLACEHOLDER } from '../../data/console'
 import type { RunResult } from '../../engine/runtime'
+import type { RunStatus } from '../../hooks/useChadRunner'
 import './Console.css'
 
 interface ConsoleProps {
   result: RunResult | null
+  status: RunStatus
 }
 
-export function Console({ result }: ConsoleProps) {
+export function Console({ result, status }: ConsoleProps) {
   const isEmpty = !result || (!result.output && !result.error)
 
   return (
@@ -13,7 +16,7 @@ export function Console({ result }: ConsoleProps) {
       <h2 className="console__title">Output</h2>
       <pre className="console__body" aria-live="polite">
         {isEmpty ? (
-          <span className="console__placeholder">{result ? 'No output' : 'Run the program to see its output'}</span>
+          <span className="console__placeholder">{CONSOLE_PLACEHOLDER[status]}</span>
         ) : (
           <>
             {result.output}

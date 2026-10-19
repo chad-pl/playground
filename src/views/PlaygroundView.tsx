@@ -8,7 +8,7 @@ import './PlaygroundView.css'
 
 export function PlaygroundView() {
   const [source, setSource] = useState(MAP_SAMPLE)
-  const { result, isRunning, run } = useChadRunner()
+  const { result, status, isRunning, run, stop } = useChadRunner()
 
   // line 0 = no location, negative = prelude; none map to the editor (for now)
   const diagnostics = useMemo<ChadDiagnostic[]>(
@@ -18,12 +18,12 @@ export function PlaygroundView() {
 
   return (
     <main className="playground">
-      <Toolbar isRunning={isRunning} onRun={() => run(source)} />
+      <Toolbar isRunning={isRunning} onRun={() => run(source)} onStop={stop} />
       <div className="playground__workspace">
         <div className="playground__editor">
           <ChadEditor value={source} onChange={setSource} diagnostics={diagnostics} />
         </div>
-        <Console result={result} />
+        <Console result={result} status={status} />
       </div>
     </main>
   )
